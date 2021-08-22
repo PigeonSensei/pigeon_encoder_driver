@@ -22,10 +22,10 @@ int GpioEncoder::SetupPin()
 int GpioEncoder::GetROSParam()
 {
   ros::NodeHandle n("~");
-  n.param<int>("Encoder0_A", pin_encoder_[0].A, 5);
-  n.param<int>("Encoder0_B", pin_encoder_[0].B, 6);
-  n.param<int>("Encoder1_A", pin_encoder_[1].A, 17);
-  n.param<int>("Encoder1_B", pin_encoder_[1].B, 27);
+  n.param<int>("Encoder0_A", pin_encoder_[0].A, 0);
+  n.param<int>("Encoder0_B", pin_encoder_[0].B, 0);
+  n.param<int>("Encoder1_A", pin_encoder_[1].A, 0);
+  n.param<int>("Encoder1_B", pin_encoder_[1].B, 0);
 
   return 0;
 }
@@ -80,7 +80,6 @@ void GpioEncoder::UpdateEncoderCount()
   encoder_count_.Stamp = time_now_;
   encoder_count_.Count[0] = encoder_counter_[0];
   encoder_count_.Count[1] = encoder_counter_[1];
-
 }
 
 void GpioEncoder::Update()
@@ -105,7 +104,7 @@ int main(int argc, char **argv)
   ros::init(argc, argv, "gpio_encoder_node");
   ros::NodeHandle n;
 
-  ros::Rate loop_rate(30);
+  ros::Rate loop_rate(60);
 
   GpioEncoder gpio_encoder(n);
 

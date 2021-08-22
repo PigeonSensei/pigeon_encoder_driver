@@ -2,11 +2,11 @@
 
 <launch>
   <!-- rusrun gpio_encoder gpio_encoder -->
-  <node pkg="gpio_encoder" type="gpio_encoder_node" name="gpio_encoder_node" respawn="true" output="log">
+  <node pkg="gpio_encoder" type="gpio_encoder_node" name="gpio_encoder_node" respawn="true" output="screen">
     <param name="Encoder0_A" type="int" value="5" />
     <param name="Encoder0_B" type="int" value="6" />
-    <param name="Encoder1_A" type="int" value="17" />
-    <param name="Encoder1_B" type="int" value="27" />
+    <param name="Encoder1_A" type="int" value="27" />
+    <param name="Encoder1_B" type="int" value="17" />
   </node>
 
 </launch>
