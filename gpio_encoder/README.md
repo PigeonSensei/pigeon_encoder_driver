@@ -8,6 +8,10 @@ This Package is for RaspberryPi
 
 https://youtu.be/TN0UcuDl5jE
 
+### Diagram
+
+![gpio_encoder_diagram](./diagram/gpio_encoder.png)
+
 ### Dependency package
 - [wiringPi](http://wiringpi.com/download-and-install/)
 
